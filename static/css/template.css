@@ -1,0 +1,32 @@
+#main {
+    margin: 0;
+    background-color: bisque;
+    height: 100%;
+    width: 100%;
+}
+
+#nav {
+    height: 10%;
+    width: 100%;
+    background-color: azure;
+}
+
+#sidebar {
+    height: 90%;
+    width: 20%;
+}
+
+#nav li {
+    display: flex;
+    float: left;
+    list-style-type: none;
+    margin-left: 2%;
+}
+
+#page {
+    float: right;
+    position: absolute;
+    top: 150px;
+    left: 860px;
+}
+

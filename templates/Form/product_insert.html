@@ -1,0 +1,37 @@
+{% load static %}
+<html>
+    <head>
+        <title>Product Page</title>
+        <link rel="stylesheet" href="{% static 'css/Form/login.css' %}">
+    </head>
+    <body>
+        <div id="header">
+            <center><h1>Product Insert Page</h1></center>
+        </div>
+        <div id="main">
+            <center><form action="{% url 'producturl' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!--
+                {{form.pid.label}}&emsp;&emsp;&emsp;{{form.pid}} <br><br>
+                {{form.prdname.label}}&emsp;&emsp;&emsp;{{form.prdname}}<br><br>
+                {{form.price.label}}&emsp;&emsp;&emsp;{{form.price}} <br><br>
+                -->
+                {{form.as_p}}
+            <input type="submit" name="submit">
+        </form>
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'success'%}
+            <!-- <p>{{message.tag}}</p>
+                <p style="color: green;">{{ message }}</p> -->
+                <p style="color: green;">{{message}}</p>
+                {% endif %}
+
+            {% endfor %}
+        {% endif %}
+        <a href="{% url 'homepageurl' %}" style="border-style: dotted;">HomePage</a>
+        </center>
+
+        </div>
+    </body>
+</html>

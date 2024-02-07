@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/mtable.css' %}">
+    </head>
+    <body>
+        
+        <div id="main">
+            <form action="{% url 'tableurl' %}" method="post">
+                {% csrf_token %}
+            <label for="">Enter a number</label><input type="text" name="num1">
+            <input type="submit" value="generate">
+        </form>
+        </div>
+        <div id="output">
+
+            <table>
+                {% for obj in table %}
+                <tr>
+                    {{obj}}
+                </tr><br>
+
+                {% endfor %}
+            </table>
+
+        </div>
+    </body>
+</html>

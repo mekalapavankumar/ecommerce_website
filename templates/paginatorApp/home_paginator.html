@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html >
+<html >
+    <head >
+        <link rel="stylesheet" href="{% static 'paginator/paginator.css' %}">
+    </head>
+    <body>
+        
+        {% for product in products %}
+        <div id="main">
+            <img src="{{product.image.url}}" alt="" ><br>
+            <B>Rs: {{product.prdname}}</B>
+            <p>{{product.price}}</p>
+        </div>
+        {% endfor %}
+        <br><br>
+        <div id="page">
+        {% if products.has_previous %}
+        <!-- has_previous:returns True if there's a previous page.-->
+        <a href="{% url 'paginatorurl' products.previous_page_number %}" style="border:solid;">previous</a>
+        {% endif %}
+
+        {{products.number}}
+
+        {% if products.has_next %} <!-- has_next:returns True if there's a next page.-->
+           <a href="{% url 'paginatorurl' products.next_page_number %}" style="border: solid;">Next</a>
+        {% endif %}
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,44 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body>
+    <div id="nav">
+        Calculator
+    </div>
+    <p>{{output}}</p>
+    <form action="" method="post" onsubmit="return validateData()">
+        {% csrf_token %}
+    <div id="main">
+        <div id="calc">
+            <input type="text" placeholder="Number 1" name="num1" id="num1">
+            <input type="text" placeholder="Number 2" name="num2" id="num2">
+            <div id="btn">
+                <input type="submit" value="+" name="add">
+                <input type="submit" value="-" name="sub"><br>
+                <input type="submit" value="*" name="multi">
+                <input type="submit" value="/" name="div">
+            </div>
+        </div>
+
+    </div>
+    </form>
+    <script>
+        function validateData()
+        {
+            let n1,n2;
+            n1 = document.getElementById('num1').value;
+            n2 = document.getElementById('num2').value;
+
+            if (n1<0 || n2<0)
+            {
+                alert('negative values are not allowed');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

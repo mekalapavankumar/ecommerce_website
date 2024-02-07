@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: bisque;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="{% url 'signupurl' %}" method="post">
+            {% csrf_token %}
+        <!-- {{form.as_p}} --> 
+        <center><br><br>
+        {{form.username.label}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{form.username}} <br><br>
+        {{form.email.label}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{form.email}} <br><br>
+        {{form.password1.label}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{form.password1}} <br><br>
+        {{form.password2.label}}&emsp;&emsp;&emsp;&emsp;{{form.password2}} <br><br>
+        {{form.is_staff.label}}{{form.is_staff}} <br><br>
+        <input type="submit" value="register"> <button><a href="{% url 'loginurl' %}">Login Page</a></button>
+        </form>
+        </center>
+        {% for msg in messages %}
+            {% if msg.tags == 'error' %}
+                <p style="color: red;">{{msg}}</p>
+            {% endif %}
+        {% endfor %}
+    </body>
+</html>

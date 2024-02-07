@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/Form/home_page.css' %}">
+    </head>
+    <body>
+            <a href="{% url 'displayurl' %}" > Display Products</a> &emsp;&emsp;
+            <a href="{% url 'producturl' %}" >Insert Products</a>
+            {% if user.is_authenticated %}
+                <h3>Hi {{user.username}}</h3>
+            {% endif %}
+            <p>You can check this out</p>
+            <a href="https://docs.djangoproject.com/en/4.2/topics/forms/">Forms Documentation</a>
+    </body>
+</html>

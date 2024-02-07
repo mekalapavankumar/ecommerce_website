@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+    <head>
+        <title>Select Page</title>
+        <link rel="stylesheet" href="{% static 'css/select.css' %}">
+    </head>
+    <body>
+        <center>
+        <table>
+            <tr>
+                <td>Employee no</td>
+                <td>Employee Name</td>
+                <td>Employee salary</td>
+            </tr>
+            {% for obj in emps %}
+                <tr>
+                    <td>{{obj.empno}}</td>
+                    <td>{{obj.empname}}</td>
+                    <td>{{obj.salary}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        </center>
+        <a href="{% url 'homeurl' %}">Home</a>
+    </body>
+</html>

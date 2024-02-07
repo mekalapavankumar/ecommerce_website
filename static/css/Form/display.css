@@ -1,0 +1,24 @@
+img {
+    width: 200px;
+    height: 200px;
+}
+
+#main {
+    float: left;
+
+}
+
+p {
+    font-size: x-large;
+}
+
+#anchor {
+    background-color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+    border: solid;
+    font-size: x-large;
+}
+
+#home {
+    font-style:italic;
+}

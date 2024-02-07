@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Page</title>
+    <link rel="stylesheet" href="{% static 'css/Form/display.css' %}">
+</head>
+<body>
+    {% for product in products %}
+    <div id="main">
+        <a href="{% url 'detailurl' product.prdid %}"><img src="{{product.image.url}}" alt=""></a><br>
+        <p>{{product.prdname}}</p>
+        <p><b>price:Rs </b>{{product.price}}</p>
+    </div>
+    {% endfor %}
+    <a id="anchor" href="{% url 'logouturl' %}">Logout</a>
+    <a id="home" href="{% url 'homepageurl' %}">HomePage</a>
+</body>
+</html>

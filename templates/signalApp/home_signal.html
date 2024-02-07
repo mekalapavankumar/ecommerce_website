@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Signal</title>
+    <style>
+        #body{
+            background-color:beige;
+            margin: 0%;
+            padding: 0%;
+        }
+        #main_signal{
+            text-align: center;
+            font-size: x-large;
+            margin: 100px;
+            background-color:antiquewhite;
+            border: 15px solid green;
+            border-radius: 1500px;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <div id="main_signal">
+
+    <form action="{% url 'signalurl' %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+    <input type="submit" value="Save">
+    </form>
+    </div>
+</body>
+</html>

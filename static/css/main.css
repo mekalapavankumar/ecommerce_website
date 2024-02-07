@@ -1,0 +1,29 @@
+#nav {
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: xxx-large;
+    background-color: sienna;
+}
+
+#calc {
+    height: 400%;
+    width: 350%;
+    position: absolute;
+    top: 250px;
+    left: 650px;
+}
+
+#calc input {
+    width: 200px;
+}
+
+#btn input {
+    width: 200px;
+}
+
+p {
+    text-align: center;
+    font-size: x-large;
+}
+

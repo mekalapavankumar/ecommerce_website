@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for prd in product %}
+    <img src="{{prd.image.url}}" alt="">
+    <p>{{prd.prdname}}</p><br>
+    <p>{{prd.price}}</p>
+    {% endfor %}
+
+    <a href="{% url 'displayurl' %}">Home</a>
+    <hr>
+
+    {% for prev_prds in prev_products %}
+        <img src="{{prev_prds.image.url}}" alt="" height="100" width="100">
+    {% endfor %}
+
+</body>
+</html>

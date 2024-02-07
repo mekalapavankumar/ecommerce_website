@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+    <head>
+        <title>Home Page</title>
+        <link rel="stylesheet" href="{% static 'css/template.css' %}">
+    </head>
+    <body>
+        <div id="main">
+            <div id="nav">
+                <ul>
+                    <a href="{% url 'home1url' %}"><h1><li>Home</li></h1></a>
+                    <h1><li>Contact</li></h1>
+                    <h1><li>About us</li></h1>
+                </ul>
+            </div>
+            <div id="sidebar">
+
+            </div>
+            <div id="page">
+                {% block main %}
+                <h1>Home Page</h1>
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
